@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using src.assignment_1.domain.entity.interfaces;
 
 namespace src.assignment_1.domain.entity;
 
-public class Agent
+public class Agents : IAgents
 {
     public int Id { get; set; }
 
