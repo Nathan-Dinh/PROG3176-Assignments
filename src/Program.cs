@@ -1,3 +1,7 @@
+using src.assignment_1.infrastructure.data;
+using src.assignment_1.infrastructure.unitOfWork;
+using Microsoft.EntityFrameworkCore;
+
 namespace src.assignment_1;
 
 public class Program
@@ -6,6 +10,16 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+      builder.Services.AddDbContext<AppDbContext>(options =>
+          options.UseSqlite(
+              builder.Configuration.GetConnectionString("Data Source=Data/app.db")
+            ),
+          ServiceLifetime.Scoped
+        );
+
+        builder.Services.AddScoped<UnitOfWork>();
+
+        builder.Services.AddControllers();
         builder.Services.AddAuthorization();
         builder.Services.AddOpenApi();
 
@@ -19,6 +33,8 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
+
+        app.MapControllers();
 
         app.Run();
     }
