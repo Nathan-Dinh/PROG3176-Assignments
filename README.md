@@ -1,3 +1,9 @@
+Project Name: PROG3176-Assignment1
+Name: Nathan Dinh
+Student ID: 8765518
+
+---
+
 # PROG3176 Assignment 1 - Secret Agents API
 
 A RESTful Web API for managing secret agents built with ASP.NET Core and Entity Framework Core.
