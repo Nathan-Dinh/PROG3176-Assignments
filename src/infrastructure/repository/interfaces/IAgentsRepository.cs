@@ -1,12 +1,12 @@
-using src.assignment_1.domain.entity;
+using assignment_1.src.domain.entity;
 
-namespace src.assignment_1.infrastructure.repository.interfaces;
+namespace assignment_1.src.infrastructure.repository.interfaces;
 
 public interface IAgentsRepository
 {
-    Task<IEnumerable<Agents>> GetAllAsync();
-    Task<Agents?> GetByIdAsync(int id);
-    Task<Agents> CreateAsync(Agents agent);
-    Task<Agents?> UpdateAsync(Agents agent);
-    Task<bool> DeleteAsync(int id);
+  Task<IEnumerable<Agents>> GetAllAsync();
+  Task<Agents?> GetByIdAsync(int id);
+  Task<Agents> CreateAsync(Agents agent);
+  Task<Agents?> UpdateAsync(Agents agent);
+  Task<bool> DeleteAsync(int id);
 }

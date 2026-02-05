@@ -1,13 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using src.assignment_1.domain.entity;
+using assignment_1.src.domain.entity;
 
-namespace src.assignment_1.infrastructure.data;
+namespace assignment_1.src.infrastructure.data;
 
-public class AppDbContext : DbContext
+public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-    {
-    }
-
-    public DbSet<Agents> Agents { get; set; }
+  public DbSet<Agents> Agents { get; set; }
 }

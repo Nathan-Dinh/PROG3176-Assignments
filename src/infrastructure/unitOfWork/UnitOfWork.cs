@@ -1,19 +1,19 @@
-using src.assignment_1.infrastructure.data;
-using src.assignment_1.infrastructure.repository;
-using src.assignment_1.infrastructure.repository.interfaces;
+using assignment_1.src.infrastructure.data;
+using assignment_1.src.infrastructure.repository;
+using assignment_1.src.infrastructure.repository.interfaces;
 
-namespace src.assignment_1.infrastructure.unitOfWork;
+namespace assignment_1.src.infrastructure.unitOfWork;
 
 public class UnitOfWork
 {
-    private readonly AppDbContext _context;
-    private readonly IAgentsRepository _agentsRepository;
+  private readonly AppDbContext _context;
+  private readonly IAgentsRepository _agentsRepository;
 
-    public UnitOfWork(AppDbContext context)
-    {
-        _context = context;
-        _agentsRepository = new AgentsRepository(_context);
-    }
+  public UnitOfWork(AppDbContext context)
+  {
+    _context = context;
+    _agentsRepository = new AgentsRepository(_context);
+  }
 
-    public IAgentsRepository AgentsRepository => _agentsRepository;
+  public IAgentsRepository AgentsRepository => _agentsRepository;
 }
