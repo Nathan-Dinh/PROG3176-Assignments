@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using assignment2.src.domain;
+using assignment2.src.domain.model;
 
 namespace assignment2.src.presentation.controllers;
 
